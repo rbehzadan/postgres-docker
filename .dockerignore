@@ -1,0 +1,14 @@
+# Ignore git-related files
+.git
+.gitignore
+
+# Ignore Docker-related files, except the Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Ignore any other files that are not needed
+.archive
+.github
+.gitea
+README.md
+LICENSE
