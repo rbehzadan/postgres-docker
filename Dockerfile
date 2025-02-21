@@ -58,7 +58,13 @@ RUN apt update && apt install -y \
     postgresql-17-pgauditlogtofile \
     postgresql-17-pgpcre \
     postgresql-17-pgq3 \
+    postgresql-17-pgrouting \
+    postgresql-17-pgrouting-scripts \
+    postgresql-17-pgsphere \
     postgresql-17-pgvector \
+    postgresql-17-pllua \
+    postgresql-17-postgis-3 \
+    postgresql-17-postgis-3-scripts \
     postgresql-17-prefix \
     postgresql-17-timescaledb \
     && apt clean -y && apt autoremove -y && rm -rf /var/lib/apt/lists/*
