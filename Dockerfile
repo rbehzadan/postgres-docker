@@ -1,5 +1,5 @@
 # First stage: Build extensions
-FROM postgres:17.3 AS builder
+FROM postgres:17.4 AS builder
 
 # Install required packages for building PostgreSQL extensions
 RUN apt update && apt install -y \
@@ -46,7 +46,7 @@ RUN mkdir -p /artifacts/extension \
 
 
 # Second stage: Final PostgreSQL image
-FROM postgres:17.3
+FROM postgres:17.4
 
 RUN apt update && apt install -y \
     postgresql-17-age \
