@@ -1,6 +1,6 @@
-# PostgreSQL 17.2 for Data Science & AI Workloads
+# PostgreSQL for Data Science & AI Workloads
 
-This repository provides a **Docker image** for **PostgreSQL 17.2**, pre-configured with powerful extensions tailored for **data science, analytics, and AI/ML workloads**.  
+This repository provides a **Docker image** for **PostgreSQL**, pre-configured with powerful extensions tailored for **data science, analytics, and AI/ML workloads**.  
 The image is built in two stages:
 1. **Building PostgreSQL Extensions** (e.g., `pg_parquet` from CrunchyData).  
 2. **Final PostgreSQL Image** with compiled extensions and additional PostgreSQL packages.
@@ -29,7 +29,7 @@ This image includes:
 
 ## 📦 Features & Pre-installed Extensions
 
-- **PostgreSQL 17.2-based**
+- **PostgreSQL**
 - **Optimized for AI, data science, and analytics**
 - **Pre-installed PostgreSQL extensions:**
   - [`pg_parquet`](https://github.com/CrunchyData/pg_parquet) *(Parquet file format support)*
@@ -53,13 +53,13 @@ This image includes:
 
 ### Pull from Docker Hub
 ```sh
-docker pull rbehzadan/postgres:17.2
+docker pull rbehzadan/postgres
 ```
 
 ### Build Locally
 To manually build the image:
 ```sh
-docker build -t my-postgres:17.2 .
+docker build -t my-postgres .
 ```
 
 ⚠️ **Note:** Building `pg_parquet` requires significant CPU and memory resources, as it compiles from source.
@@ -75,7 +75,7 @@ docker run -d --name postgres \
   -e POSTGRES_PASSWORD=secret \
   -e POSTGRES_DB=mydb \
   -p 5432:5432 \
-  rbehzadan/postgres:17.2
+  rbehzadan/postgres
 ```
 
 Connect to the database using `psql`:
