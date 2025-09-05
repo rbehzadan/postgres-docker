@@ -1,5 +1,5 @@
 # First stage: Build extensions
-FROM postgres:17.5 AS builder
+FROM postgres:17.6 AS builder
 
 # Install required packages for building PostgreSQL extensions
 RUN apt update && apt install -y \
@@ -23,7 +23,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
 
 # Install specific version of pgrx
 RUN export PATH="$HOME/.cargo/bin:$PATH" \
-    && cargo install cargo-pgrx --version=0.14.1 \
+    && cargo install cargo-pgrx --version=0.16.0 \
     && cargo pgrx init --pg17 /usr/bin/pg_config
 
 # Build pg_parquet
@@ -46,7 +46,7 @@ RUN mkdir -p /artifacts/extension \
 
 
 # Second stage: Final PostgreSQL image
-FROM postgres:17.5
+FROM postgres:17.6
 
 RUN apt update && apt install -y \
     postgresql-17-age \
